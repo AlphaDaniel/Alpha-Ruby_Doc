@@ -3,7 +3,9 @@ class UI
   attr_reader :counter #For Loading Anim
 #===================Input====================== 
   def self.my_gets 
-    gets.strip.to_s.downcase
+    input = gets.strip.to_s.downcase
+    clear
+    input
   end
   
   def self.clear 
@@ -21,7 +23,6 @@ class UI
     elsif input == "exit!" 
       exit!
     elsif input == "?" 
-      clear
       learn_more
     else 
       matches = Processor.search(input) 
