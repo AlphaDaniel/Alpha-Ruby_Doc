@@ -115,10 +115,12 @@ class UI
 #-------------------docs----------------------- 
   def self.display_class(doc, view="short") 
     UI.sepL
+    # header #
     puts "TITLE: ".cyan + doc.name.upcase 
     puts "TYPE: ".cyan + doc.type.upcase
     puts "\nDESCRIPTION:".cyan 
     
+    # documentation #
     if view == "short"
       puts wrapped(doc.short) 
       puts view_full
@@ -127,10 +129,12 @@ class UI
       puts doc.documentation
     end
     
+    # footer #
     puts "Methods: ".cyan + "#{doc.methods.count}".yellow
     puts "Source: #{doc.url}".red 
     puts sepR
     
+    # control #
     display_class_menu(doc)
     display_class_control(doc)
   end
@@ -250,15 +254,17 @@ class UI
   end
   
   def self.display_class_menu(doc) 
-    puts "To ".cyan + "View Methods ".yellow + "For".cyan + " #{doc.name}".yellow + " (Enter ".cyan + "'1'".yellow + ")".cyan
-    puts "To Return To".cyan + " Main Menu".yellow + " (Enter ".cyan + "'m'".yellow + ")".cyan
-    puts "To".cyan + " Leave".yellow + " (".cyan + "'exit!'".yellow + ")\n".cyan
+    puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
+    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "*".yellow + ")".cyan
+    puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
+    puts "Leave (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
   def self.display_method_menu 
-    puts "To Return To".cyan + " Main Menu".yellow + " (Enter ".cyan + "'m'".yellow + ")".cyan
-    puts "To".cyan + " Leave".yellow + " (".cyan + "'exit!'".yellow + ")\n".cyan
+    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "*".yellow + ")".cyan
+    puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
+    puts "Leave (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
