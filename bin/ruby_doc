@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
+#======================================= 
 require "bundler/setup"
+require 'fileutils'
 require_relative '../config/environment'
-
+#=======================================
+# Creates usr dir
+FileUtils::mkdir 'usr'
+# Creates favorites.txt
+FileUtils::touch 'usr/favorites.txt'
+#=======================================
 RubyDoc::CLI.start_load
 
 
