@@ -4,10 +4,13 @@ require "bundler/setup"
 require 'fileutils'
 require_relative '../config/environment'
 #=======================================
-# Creates usr dir
-FileUtils::mkdir 'usr'
-# Creates favorites.txt
-FileUtils::touch 'usr/favorites.txt'
+# if dir does not exist
+if !File.exist?('usr')
+  # Creates usr dir
+  FileUtils::mkdir 'usr'
+  # Creates favorites.txt
+  FileUtils::touch 'usr/favorites.txt'
+end
 #=======================================
 RubyDoc::CLI.start_load
 
