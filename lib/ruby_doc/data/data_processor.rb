@@ -29,14 +29,24 @@ class Processor
   end
 #===============================Save Doc============================== 
   def self.save(doc) 
-    # write
-    File.open("usr/favorites.txt", "a") do |l| 
-      l.puts doc.name
+    # if entry does not exist write else inform entry exist
+    if uniq(doc) 
+      File.open("usr/favorites.txt", "a"){|l| l.puts doc.name}
+      puts "\r"
+      print doc.name.cyan + " Saved!".light_cyan
+      
+      UI.display_class_control(doc)
+    else
+      puts "\r"
+      print doc.name.cyan + " Already Saved!".light_red
+      
+      UI.display_class_control(doc)
     end
-    puts "\r"
-    print doc.name.cyan + " Saved!".light_cyan
-    
-    UI.display_class_control(doc) 
+  end
+  
+  def self.uniq(doc) # save(doc) Helper Method
+    # read => uniq boolean
+    File.open("usr/favorites.txt").none?{|l| l.chomp == doc.name}
   end
 #================================SEARCH=============================== 
   def self.search(name)

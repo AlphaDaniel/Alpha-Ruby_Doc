@@ -40,7 +40,7 @@ class UI
       display_class(doc, "full")
     when "1" 
       method_list(doc)
-    when "*" 
+    when "s" 
       Processor.save(doc)
     when "m" 
       RubyDoc::CLI.start
@@ -257,14 +257,14 @@ class UI
   
   def self.display_class_menu(doc) 
     puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
-    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "*".yellow + ")".cyan
+    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
   def self.display_method_menu 
-    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "*".yellow + ")".cyan
+    puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave (".cyan + "exit!".yellow + ")".cyan
     print randQ

@@ -16,7 +16,7 @@ class Scraper < UI
       doc = Klass.new(type, name, url) if class_uniq(url)
       # keeps copy in DocDB
       $DocDB << doc if doc_uniq(url)
-    end  
+    end
   end 
 #===========================LOAD METHODS================================= 
   def self.load_methods 

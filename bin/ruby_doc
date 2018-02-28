@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 #======================================= 
-require "bundler/setup"
-require 'fileutils'
 require_relative '../config/environment'
 #=======================================
 # if dir does not exist

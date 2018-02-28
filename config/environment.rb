@@ -1,4 +1,6 @@
 #====================Requires===================
+require "bundler/setup"
+require 'fileutils'
 require 'colorize'
 require 'open-uri'
 require 'nokogiri'
@@ -15,8 +17,5 @@ require_relative '../lib/ruby_doc/data/data_processor'
 #====================DataBase===================
 $DocDB = []
 #====================Testing====================
-# # File writer
-# File.open("usr/favorites.txt", "a") do |l| 
-#   l.puts "success"
-# end
+
 #===============================================
