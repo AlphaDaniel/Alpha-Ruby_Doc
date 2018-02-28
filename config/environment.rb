@@ -13,7 +13,9 @@ require_relative '../lib/ruby_doc/data/method'
 require_relative '../lib/ruby_doc/data/scraper'
 require_relative '../lib/ruby_doc/data/data_processor'
 #====================DataBase===================
+require 'fileutils'
+FileUtils::mkdir_p 'user'
 $DocDB = []
 #====================Testing====================
-# Scraper.changelog
+
 #===============================================

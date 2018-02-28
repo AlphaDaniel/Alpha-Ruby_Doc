@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# require 'pry'
+require 'fileutils'
+#============================================
+
+# Creates usr dir
+FileUtils::mkdir 'usr'
+
+# Creates favorites.txt
+FileUtils::touch 'usr/favorites.txt'
+
+# # File writer
+# File.open("usr/favorites.txt", "a") do |l| 
+#     l.puts "testing"
+# end
+
+# # File reader
+# favorites = []
+# File.open("usr/favorites.txt").each do |l| 
+#   favorites << l.chomp
+#   favorites
+# end
+
+# # File writer
+# File.open("usr/favorites.txt", "a") do |l| 
+#     l.puts "file"
+# end
+
+# binding.pry
