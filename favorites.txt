@@ -1,0 +1,6 @@
+successfully
+wrote
+new
+file
+and
+read
