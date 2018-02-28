@@ -40,8 +40,8 @@ class UI
       display_class(doc, "full")
     when "1" 
       method_list(doc)
-    when "*"
-      puts "Greenlight".green
+    when "*" 
+      Processor.save(doc)
     when "m" 
       RubyDoc::CLI.start
     when "exit!" 

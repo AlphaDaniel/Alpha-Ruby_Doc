@@ -27,6 +27,17 @@ class Processor
       UI.nil_error
     end
   end
+#===============================Save Doc============================== 
+  def self.save(doc) 
+    # write
+    File.open("usr/favorites.txt", "a") do |l| 
+      l.puts doc.name
+    end
+    puts "\r"
+    print doc.name.cyan + " Saved!".light_cyan
+    
+    UI.display_class_control(doc) 
+  end
 #================================SEARCH=============================== 
   def self.search(name)
     $DocDB.find_all{|doc| doc.name.downcase.include?(name)}
