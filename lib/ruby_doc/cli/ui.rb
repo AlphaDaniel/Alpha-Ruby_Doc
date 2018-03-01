@@ -18,6 +18,8 @@ class UI
       main_error
     elsif input == "b" 
       paginate("start") 
+    elsif input == "*"   
+      favorites_list
     elsif input == "exit!" 
       exit!
     elsif input == "?" 
@@ -161,7 +163,7 @@ class UI
     display_method_control(doc)
   end
 #-------------------lists---------------------- 
-  def self.favorites_list
+  def self.favorites_list 
     puts sepL
     
     # Normalize Favorites List
