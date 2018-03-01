@@ -1,2 +1,2 @@
+reverse_each (Enumerable)
 Array
-String

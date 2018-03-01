@@ -49,10 +49,11 @@ class Processor
     File.open("usr/favorites.txt").none?{|l| l.chomp == doc.name}
   end
 #===============================Find Fav============================== 
-  # def self.find_fav(name)
-  #   $DocDB.find_all{|doc| doc.name == name}
-  # end  
-  # USE TO FIND DOC OBJECT AFTER LISTING FAVS
+  def self.find_fav(name) 
+    doc = $DocDB.find{|doc| doc.name == name}
+    
+    load_doc(doc) 
+  end  
 #================================SEARCH=============================== 
   def self.search(name)
     $DocDB.find_all{|doc| doc.name.downcase.include?(name)}

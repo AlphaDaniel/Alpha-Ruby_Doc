@@ -33,6 +33,22 @@ class UI
     end
   end
   
+  def self.favorites_list_control(list) 
+    prompt
+    input = my_gets
+    
+    if input == "m" 
+      RubyDoc::CLI.start
+    elsif input == "exit!"
+      exit!
+    elsif !input.to_i.between?(1,list.count) 
+      list_error(list)
+    else 
+      Processor.find_fav(list[input.to_i-1])
+    end 
+    favorites_list_control(list)
+  end
+  
   def self.display_class_control(doc) 
     prompt
     input = my_gets
@@ -167,20 +183,20 @@ class UI
     puts sepL
     
     # Normalize Favorites List
-    favs = []
+    list = []
     File.open("usr/favorites.txt").each do |li| 
-      favs << li.chomp
+      list << li.chomp
     end
     
     # Iterated and display normalized favorites list
-    favs.each_with_index do |f, index|
+    list.each_with_index do |f, index| 
       li = ["#{index + 1}.".yellow, f.cyan]
       puts li.join(" ")
     end
-    
     puts sepR
-    # fav_menu if needed if not use existing menu
-    # fav_control(favs) might not need check with list control
+    
+    list_menu(list) 
+    favorites_list_control(list) 
   end
   
   def self.search_list(matches) 
