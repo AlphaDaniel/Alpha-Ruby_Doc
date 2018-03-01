@@ -51,11 +51,13 @@ class UI
     end 
   end
   
-  def self.display_method_control 
+  def self.display_method_control(doc) 
     prompt
     input = my_gets
     
     case input
+    when "s" 
+      Processor.save(doc)
     when "m" 
       RubyDoc::CLI.start
     when "exit!"
@@ -156,7 +158,7 @@ class UI
     #-----------future fix------------#
     
     display_method_menu 
-    display_method_control
+    display_method_control(doc)
   end
 #-------------------lists---------------------- 
   def self.search_list(matches) 
@@ -256,8 +258,8 @@ class UI
   end
   
   def self.display_class_menu(doc) 
-    puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
     puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
+    puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave (".cyan + "exit!".yellow + ")".cyan
     print randQ
