@@ -18,7 +18,7 @@ class UI
       main_error
     elsif input == "b" 
       paginate("start") 
-    elsif input == "*"   
+    elsif input == "*" 
       favorites_list
     elsif input == "exit!" 
       exit!
@@ -179,25 +179,32 @@ class UI
   end
 #-------------------lists---------------------- 
   def self.favorites_list 
-    puts sepL
-    puts favorites_message
-    puts sepB
-    
     # Normalize Favorites List
     list = []
     File.open("usr/favorites.txt").each do |li| 
       list << li.chomp
     end
     
-    # Iterated and display normalized favorites list
-    list.each_with_index do |f, index| 
-      li = ["#{index + 1}.".yellow, f.cyan]
-      puts li.join(" ")
+    # if favorites is empty error & back to main control
+    if list.empty?
+      favorites_error
+      main_control
+      
+    else
+      puts sepL
+      puts favorites_message
+      puts sepB
+      
+      # Iterated and display normalized favorites list
+      list.each_with_index do |f, index| 
+        li = ["#{index + 1}.".yellow, f.cyan]
+        puts li.join(" ")
+      end
+      puts sepR
+      
+      list_menu(list) 
+      favorites_list_control(list) 
     end
-    puts sepR
-    
-    list_menu(list) 
-    favorites_list_control(list) 
   end
   
   def self.search_list(matches) 
@@ -340,6 +347,12 @@ class UI
   def self.main_error 
     sleep(0.1)
     print redH("\n Input Must Be 1 Word, 'b' to browse, or 'exit!' to leave ")
+    main_control
+  end
+  
+  def self.favorites_error 
+    sleep(0.1)
+    print redH("\n You have no favorites saved ")
     main_control
   end
   
