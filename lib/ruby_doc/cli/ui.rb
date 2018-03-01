@@ -118,18 +118,18 @@ class UI
 #==================Display===================== 
 #-------------------docs----------------------- 
   def self.display_class(doc, view="short") 
-    UI.sepL
+    puts sepL
     # header #
     puts "TITLE: ".cyan + doc.name.upcase 
     puts "TYPE: ".cyan + doc.type.upcase
     puts "\nDESCRIPTION:".cyan 
     
     # documentation #
-    if view == "short"
+    if view == "short" 
       puts wrapped(doc.short) 
       puts view_full
       
-    elsif view == "full"
+    elsif view == "full" 
       puts doc.documentation
     end
     
@@ -144,7 +144,7 @@ class UI
   end
   
   def self.display_method(doc) 
-    UI.sepL
+    puts sepL
     puts "Title: ".cyan + doc.name.upcase 
     puts "Type: ".cyan + doc.type.upcase
     puts "\nDescription:".cyan 
@@ -162,7 +162,7 @@ class UI
   end
 #-------------------lists---------------------- 
   def self.search_list(matches) 
-    UI.sepL
+    puts sepL
     matches.each_with_index do |doc, index| 
       
       if doc.type == "Class" || doc.type == "Module"
@@ -203,7 +203,7 @@ class UI
       
       if doc.type == "Class" || doc.type == "Module"
         li = ["#{index + 1}.".yellow, doc.name.light_cyan]
-      else
+      else 
         li = ["#{index + 1}.".yellow, doc.name.cyan]
       end
       
@@ -240,14 +240,13 @@ class UI
   end
 #===================Menus====================== 
   def self.main_menu(from="default") 
-    puts sepR#
-    puts "Enter a ".cyan + "word ".yellow + "associated with the Ruby Language & I will ".cyan
-    puts "try to find a match in my database for you.".cyan
-    sepL#
-    puts "\You can also enter".cyan + " 'b'".yellow + " to browse instead.".cyan + " Happy Hunting!".cyan
-    sepB
-    puts "Enter '?' to Learn More about Alpha Ruby-Doc".black unless from == "learn"
-    print cyanH("\n If You're Searching... Single Word Inputs Only Please ")
+    puts sepR
+    puts "To search... enter a single (".cyan + "word".yellow + ") associated with Ruby. \nI will try to find a match in my database for you.".cyan
+    puts sepB
+    puts "To Browse enter (".cyan + "b".yellow + ")".cyan + " ||| ".black + "To view your favorites enter (".cyan + "*".yellow + ")".cyan
+    puts sepR
+    puts "Enter '?' to Learn More about Alpha Ruby-Doc\n".black unless from == "learn"
+    print cyanH("\n   Happy Hunting!   ")
   end
   
   def self.list_menu(matches) 
@@ -375,7 +374,7 @@ class UI
   end
 #-----------------separators------------------- 
   def self.sepL 
-    puts "=".cyan*28 + "=".white*28
+    "=".cyan*28 + "=".white*28
   end
     
   def self.sepR 

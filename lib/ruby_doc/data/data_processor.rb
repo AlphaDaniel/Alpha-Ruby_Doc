@@ -36,7 +36,7 @@ class Processor
       print doc.name.cyan + " Saved!".light_cyan
       
       UI.display_class_control(doc)
-    else
+    else 
       puts "\r"
       print doc.name.cyan + " Already Saved!".light_red
       
@@ -44,7 +44,7 @@ class Processor
     end
   end
   
-  def self.uniq(doc) # save(doc) Helper Method
+  def self.uniq(doc) # save(doc) Helper Method 
     # read => uniq boolean
     File.open("usr/favorites.txt").none?{|l| l.chomp == doc.name}
   end
