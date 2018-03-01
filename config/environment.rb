@@ -4,7 +4,7 @@ require 'fileutils'
 require 'colorize'
 require 'open-uri'
 require 'nokogiri'
-require_relative './patches'
+# require_relative './patches'
 require_relative '../lib/ruby_doc/version'
 #======================Cli======================
 require_relative '../lib/ruby_doc/cli/cli'
