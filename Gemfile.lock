@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby_doc (2.0.3)
+    ruby_doc (2.1.0)
       colorize (~> 0.8.1)
       nokogiri (~> 1.8, >= 1.8.1)
 

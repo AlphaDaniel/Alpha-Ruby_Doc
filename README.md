@@ -6,6 +6,7 @@
 
 [![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)
 [![Gem Version](https://img.shields.io/gem/v/ruby_doc.svg?&label=version&?&colorB=brightgreen)](https://rubygems.org/gems/ruby_doc)
+[![Release Date](https://img.shields.io/github/release-date/AlphaDaniel/ruby_doc.svg)](https://github.com/AlphaDaniel/ruby_doc/releases)
 [![Downloads](https://img.shields.io/gem/dt/ruby_doc.svg)](https://rubygems.org/gems/ruby_doc)
 [![GitHub last commit](https://img.shields.io/github/last-commit/AlphaDaniel/alpha-ruby_doc.svg)](https://github.com/AlphaDaniel/alpha-ruby_doc/commits/master)
 [![Changelog](https://img.shields.io/badge/change-log-blue.svg)](https://github.com/AlphaDaniel/alpha-ruby_doc/blob/master/changelog.md)
@@ -16,9 +17,15 @@
 
 <!--![image](https://images.huffingtonpost.com/2013-08-23-tumblr_m08celcrnT1r3isxuo1_500.gif)-->
 
-Ever get tired of leaving your editor / environment to google a method, or more in depth info on a class or module? This gem aims to make Ruby referencing quick and more importantly, **LOCAL!**
+**THE ULTIMATE RUBY DEVELOPER REFERENCING TOOL!**
 
-**Alpha Ruby Doc** scrapes Ruby documentation and allows users to quickly reference Ruby methods and additional information all on your terminal. Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in your line of sight, and get right back to coding!
+**Alpha Ruby Doc** aims to make Ruby referencing quick and painless. This gem scrapes Ruby documentation and allows users to quickly reference Ruby classes, modules and methods all on your terminal in STYLE!
+
+Features include Search by Name, Paginated Browsing, Full documentation including Syntax and Source Code, Save to Favorites, Source Links, Seamless Navigation, and more.
+
+Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in your line of sight, and get right back to coding!
+
+
 
 ---
 ## A Look Inside
@@ -28,19 +35,19 @@ Ever get tired of leaving your editor / environment to google a method, or more 
 
 ---
 ### Features:
-✅ Search for Ruby Documentation by Class, Module or Method Name
+✓ Search for Ruby Documentation by Class, Module or Method Name
 
-✅ Browse all Documentation (Paginated Output To Terminal)
+✓ Full documentation including description, syntax and source code!
 
-✅ View Descriptions and Syntax
+✓ Save Docs to Favorites! for quick referencing
 
-✅ View Source Code
+✓ Browse all Documentation (Paginated Output To Terminal)
 
-✅ Source Links Provided
+✓ Source Links Provided
 
-✅ Easy Navigation
+✓ Easy Navigation
 
-✅ Random Dev Quotes (For fun and motivation) 
+✓ Random Dev Quotes (For fun and motivation) 
 
 
 ---
@@ -50,7 +57,6 @@ Ever get tired of leaving your editor / environment to google a method, or more 
 ---
 ### To do list:
 * Multiple Doc sources
-* Save Favorites
 * Add Notes
 
 ---
@@ -93,6 +99,10 @@ To exit
 To Learn More (From Main Menu)
 
      $ ?
+     
+To List Favorites (From Main Menu)
+
+     $ *
     
 ---
 ## Contributing
