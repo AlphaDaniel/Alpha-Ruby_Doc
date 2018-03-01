@@ -161,6 +161,26 @@ class UI
     display_method_control(doc)
   end
 #-------------------lists---------------------- 
+  def self.favorites_list
+    puts sepL
+    
+    # Normalize Favorites List
+    favs = []
+    File.open("usr/favorites.txt").each do |li| 
+      favs << li.chomp
+    end
+    
+    # Iterated and display normalized favorites list
+    favs.each_with_index do |f, index|
+      li = ["#{index + 1}.".yellow, f.cyan]
+      puts li.join(" ")
+    end
+    
+    puts sepR
+    # fav_menu if needed if not use existing menu
+    # fav_control(favs) might not need check with list control
+  end
+  
   def self.search_list(matches) 
     puts sepL
     matches.each_with_index do |doc, index| 
