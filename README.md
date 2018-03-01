@@ -6,11 +6,12 @@
 
 [![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)
 [![Gem Version](https://img.shields.io/gem/v/ruby_doc.svg?&label=version&?&colorB=brightgreen)](https://rubygems.org/gems/ruby_doc)
-[![Release Date](https://img.shields.io/github/release-date/AlphaDaniel/ruby_doc.svg)](https://github.com/AlphaDaniel/ruby_doc/releases)
-[![Downloads](https://img.shields.io/gem/dt/ruby_doc.svg)](https://rubygems.org/gems/ruby_doc)
-[![GitHub last commit](https://img.shields.io/github/last-commit/AlphaDaniel/alpha-ruby_doc.svg)](https://github.com/AlphaDaniel/alpha-ruby_doc/commits/master)
+[![Release Date](https://img.shields.io/github/release-date/AlphaDaniel/ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/ruby_doc/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/AlphaDaniel/alpha-ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/alpha-ruby_doc/commits/master)
 [![Changelog](https://img.shields.io/badge/change-log-blue.svg)](https://github.com/AlphaDaniel/alpha-ruby_doc/blob/master/changelog.md)
 [![Site](https://img.shields.io/badge/Alpha-Coding-blue.svg?&colorB=0F80C0&?&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAIAAACQKrqGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw%2FeHBhY2tldCBiZWdpbj0i77u%2FIiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8%2BIDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4OUY5MDgyNzE4RjQxMUU4QjBCREE1NUVCQkYxMDJFMiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4OUY5MDgyODE4RjQxMUU4QjBCREE1NUVCQkYxMDJFMiI%2BIDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjg5RjkwODI1MThGNDExRThCMEJEQTU1RUJCRjEwMkUyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjg5RjkwODI2MThGNDExRThCMEJEQTU1RUJCRjEwMkUyIi8%2BIDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY%2BIDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8%2BLUvNgAAAAkRJREFUeNocUFtP02AY7td%2BbVfoGFvHzmxjgzEOc0ETb0BvQCFMgfhzvPAQNPwSEm%2BJiTEBEhQvxDsUOQSyMoSxso2Vtmv7de3qp%2B%2FFk%2FfiyXMCoUg4Gk0kUtn00NDau9cHh8dvVt%2B7Tof39uuaYtlOQ6riZ3h0ggqHIwEh1BcIsiwTHBgYTCSqUj0UifC8j4a0CwDDsMg0EDLB3EKJ6%2B0LCIKnh%2Ff5fE3pcndnW2%2FrNMOEI7HceBFZmKafHv%2BGPV4%2F62Ep2tPLewkKbn7%2BdHEuEv%2FPdpyphzNewJuIR2mDHM3nUqlkUOj3%2B%2F33p4r3CgVMgpDCOJLLPV2YG5%2BcrNfrlfIZXH310nEcXddlVfv29Uuz2finZzsYGYo8Odjf3Nm9vhAtsw1xCWRZXaxEgoOf%2BxzHZTMZRVUASZ5Xzre3tm5bius62IeifcGjsnh1c%2BsCcrH0TPD3tzXVw3oUrT09PfN2dU2W78TymWkalAWAcqcCSBuW1ek4zdplRRQ1Q7%2BRpOdLK%2FmJQiQ%2BGIzG2qpG4kCQAkqrURHLDOFqqlqTpNOTE0AQeCbbtmVNjSXTC8svIM6k3MldlyiMhR8Ux%2FMjqXQ282F9HUJ6aXklGhZasrz365DDkt0O6iDD1NXF%2BVmG5apX1x83NnieJwgXWR3HcTOp5HAyjvfBxSDOWHr0OB6Nmggh2%2BF4H0lSXar9p9YIBEMcyxTH8s3WLbQMIxYfnJ19gveq3jRqij4zvzQgBE6PDve%2B%2F%2BjhPMPZNMuwtOv%2BFWAADfsWB%2FHBnC4AAAAASUVORK5CYII%3D)](http://a1phacoding.com/)
+
+[![Downloads](https://ruby-gem-downloads-badge.herokuapp.com/ruby_doc?type=total&?&style=social)](https://rubygems.org/gems/ruby_doc)
 
 ---
 ## A CLI Gem That Scrapes Ruby Documentation
@@ -31,7 +32,7 @@ Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in y
 ## A Look Inside
 [![forthebadge](http://forthebadge.com/images/badges/thats-how-they-get-you.svg)](http://forthebadge.com)
 
-![image](https://i.imgur.com/qAW4sNY.gif)
+![screenshots](https://i.imgur.com/UuEwILB.gif)
 
 ---
 ### Features:
