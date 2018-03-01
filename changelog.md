@@ -2,7 +2,7 @@ v2.1.0 (2018-03-01) (Not Deployed Yet)
 ------------------
 
 * Feature - Add docs to favorites
-* Maintenance - cleaned up menus
+* User X - cleaned up menus
 
 v2.0.3 (2018-02-24)
 ------------------

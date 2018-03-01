@@ -308,9 +308,9 @@ class UI
   end
   
   def self.list_menu(matches) 
-    puts "To ".cyan + "View ".yellow + "(Enter ".cyan + "#".yellow + ")".cyan 
-    puts "To return to".cyan + " Main Menu".yellow + " (Enter ".cyan + "'m'".yellow + ")".cyan
-    puts "To".cyan + " Leave".yellow + " (".cyan + "'exit!'".yellow + ")\n".cyan
+    puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
+    puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
+    puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
@@ -318,29 +318,29 @@ class UI
     puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
-    puts "Leave (".cyan + "exit!".yellow + ")".cyan
+    puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
   def self.display_method_menu 
     puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
-    puts "Leave (".cyan + "exit!".yellow + ")".cyan
+    puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
   def self.browse_menu(page) 
-    puts "To ".cyan + "View ".yellow + "(Enter ".cyan + "#".yellow + ")".cyan + " eg. #{page.count.to_s} for #{page[page.count-1].name}".black
-    puts "To ".cyan + "Browse Next Page ".yellow + "(Enter ".cyan + "'n'".yellow + ")".cyan
-    puts "To Return To".cyan + " Main Menu".yellow + " (Enter ".cyan + "'m'".yellow + ")".cyan
-    puts "To".cyan + " Leave".yellow + " (".cyan + "'exit!'".yellow + ")\n".cyan
+    puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
+    puts "Next Page ".light_cyan + "(".cyan + "n".yellow + ")".cyan 
+    puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
+    puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
   def self.last_page_menu(page)
-    puts "To ".cyan + "View ".yellow + "(Enter ".cyan + "#".yellow + ")".cyan + " eg. #{page.count.to_s} for #{page[page.count-1].name}".black
-    puts "To Return To".cyan + " Main Menu".yellow + " (Enter ".cyan + "'m'".yellow + ")".cyan
-    puts "To".cyan + " Leave".yellow + " (".cyan + "'exit!'".yellow + ")\n".cyan
+    puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
+    puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
+    puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
 #===================Error====================== 
