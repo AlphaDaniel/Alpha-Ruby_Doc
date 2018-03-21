@@ -1,28 +1,27 @@
 # comment out before push
 require_relative './patches'
-#====================Requires=========================
+#====================Requires==============================
 require "bundler/setup"
 require 'fileutils'
 require 'colorize'
 require 'open-uri'
 require 'nokogiri'
 require_relative '../lib/ruby_doc/version'
-#======================Cli============================
+#===========================Cli============================ 
 require_relative '../lib/ruby_doc/cli/cli'
 require_relative '../lib/ruby_doc/cli/ui'
-#=====================Data============================
+#===========================Data=========================== 
 require_relative '../lib/ruby_doc/data/class'
 require_relative '../lib/ruby_doc/data/method'
 require_relative '../lib/ruby_doc/data/scraper'
 require_relative '../lib/ruby_doc/data/data_processor'
-#====================DataBase=========================
+#=========================DataBase========================= 
 $DocDB = []
-#===============Top Level Methods===================== 
-# binding.pry
+#========================Favorites========================= 
 def fav_dir
 "#{Gem.path[0]}/gems/ruby_doc-#{RubyDoc::VERSION}/favs.txt"
 end
 FileUtils::touch "#{fav_dir}"
-#====================Testing========================== 
-
-#=====================================================
+#=========================Testing========================== 
+# binding.pry
+#========================================================== 

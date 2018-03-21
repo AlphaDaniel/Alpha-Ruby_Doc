@@ -84,6 +84,10 @@ And then execute
 #### For Yourself:
 
      $ gem install ruby_doc
+     
+And then execute
+
+     $ bundle     
 
 
 ---

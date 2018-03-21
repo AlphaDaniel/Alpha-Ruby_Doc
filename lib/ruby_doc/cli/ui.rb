@@ -191,9 +191,9 @@ class UI
       main_control
       
     else
+      # puts sepL
+      # puts favorites_message
       puts sepL
-      puts favorites_message
-      puts sepB
       
       # Iterated and display normalized favorites list
       list.each_with_index do |f, index| 
@@ -272,16 +272,12 @@ class UI
     puts sepB
     puts "FAVORITES".cyan
     puts sepB
-    puts wrapped("In this early version of the favorites feature there are a few things to note, for this to work properly.", 55)
+    puts wrapped("Favorites now persisting to gem directory. Your favorites will be accessible globally throughout all your directories unless/until you uninstall this gem.", 55)
     puts "\n"
-    puts wrapped("When you install ruby_doc we create a dir (usr) with a file inside (favorites.txt) in your current directory. In order for favorites to read from this file and output your saved entries this dir/file must remain in your current dir.", 55)
+    puts wrapped("When updating this gem, ruby_doc will check if your favorites file contains any entries (you have favorites saved). If you have entries at the time of the update, it will copy your favorites over to your new (version) gem directory so that you never lose your entries.", 55)
     puts "\n"
-    puts wrapped("If at any point you switch directories and want to have access to your favorites simply copy or move the (usr) dir to the root/top level of the directory you'd like to have access to your ruby_doc favorites in.", 55)
-    puts "\n"
-    puts "Please do not modify this file!".red
-    puts wrapped("If you do accidentally, and encounter any problems displaying, do the following. Open the favorites.txt file in your usr dir and make sure each entry is on a new/separate line. If you still have issues you will have to delete your usr folder. When you run ruby_doc again it will check for the usr dir, if it doesn't exist, it will create a new one for you. Would be a good idea to save your entries before deleting usr for reference.", 55)
-    puts "\n"
-    puts wrapped("This is something that obviously will be improved to persist through all your directories in the future, but give me time. Thanks for using RUBY DOC!", 55)
+    puts "Note:".red
+    puts wrapped("The aforementioned 'Update Proof' will not be coded in until the next update but it won't be needed until then regardless so save away.", 55)
     
     puts sepB
     puts "COMING SOON".cyan
@@ -449,10 +445,6 @@ class UI
     "=".black*56
   end
 #------------------messages-------------------- 
-  def self.favorites_message 
-    "Please Note: ".black + "/usr".light_black + " dir must exist in your current dir for\nthis to work. To learn more go to main menu & enter (".black + "?" + ")".black
-  end
-  
   def self.redH(str) 
     str.colorize(color: :white, background: :red)
   end #red highlight
