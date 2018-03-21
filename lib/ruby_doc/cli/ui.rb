@@ -181,7 +181,7 @@ class UI
   def self.favorites_list 
     # Normalize Favorites List
     list = []
-    File.open("#{gem_folder("ruby_doc", "2.1.1")}/favs.txt").each do |li| 
+    File.open("#{fav_dir}").each do |li| 
       list << li.chomp
     end
     

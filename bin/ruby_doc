@@ -2,6 +2,6 @@
 #============================================================= 
 require_relative '../config/environment'
 #============================================================= 
-FileUtils::touch "#{gem_folder("ruby_doc", "2.1.1")}/favs.txt"
+# FileUtils::touch "#{fav_dir}"
 #=============================================================
 RubyDoc::CLI.start_load

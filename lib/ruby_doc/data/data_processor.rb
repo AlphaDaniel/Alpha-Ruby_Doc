@@ -31,7 +31,7 @@ class Processor
   def self.save(doc) 
     # if entry does not exist write else inform entry exist
     if uniq(doc) 
-      File.open("#{gem_folder("ruby_doc", "2.1.1")}/favs.txt", "a"){|l| l.puts doc.name}
+      File.open("#{fav_dir}", "a"){|l| l.puts doc.name}
       puts "\r"
       print doc.name.cyan + " Saved!".light_cyan
       
@@ -46,7 +46,7 @@ class Processor
   
   def self.uniq(doc) # save(doc) Helper Method 
     # read => uniq boolean
-    File.open("#{gem_folder("ruby_doc", "2.1.1")}/favs.txt").none?{|l| l.chomp == doc.name}
+    File.open("#{fav_dir}").none?{|l| l.chomp == doc.name}
   end
 #===============================Find Fav============================== 
   def self.find_fav(name) 

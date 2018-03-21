@@ -18,9 +18,11 @@ require_relative '../lib/ruby_doc/data/data_processor'
 #====================DataBase=========================
 $DocDB = []
 #===============Top Level Methods===================== 
-def gem_folder(gem_name, version)
-"#{Gem.path[0]}/gems/#{gem_name}-#{version}"
+# binding.pry
+def fav_dir
+"#{Gem.path[0]}/gems/ruby_doc-#{RubyDoc::VERSION}/favs.txt"
 end
+FileUtils::touch "#{fav_dir}"
 #====================Testing========================== 
 
 #=====================================================
