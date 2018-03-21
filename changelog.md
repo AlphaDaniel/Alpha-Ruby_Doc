@@ -2,6 +2,7 @@ v2.1.2 (2018-03-21)
 ------------------
 
 * Patch - Favorites now persist to gem directory, access globally
+* Feature - Reset favorites option on favorites menu.
 
 v2.1.1 (2018-03-01) 
 ------------------

@@ -53,7 +53,13 @@ class Processor
     doc = $DocDB.find{|doc| doc.name == name}
     
     load_doc(doc) 
-  end  
+  end 
+#==============================Reset Favs============================= 
+  def self.reset_favs 
+    open("#{fav_dir}", File::TRUNC) {}
+    
+    UI.reset_favs_message
+  end
 #================================SEARCH=============================== 
   def self.search(name)
     $DocDB.find_all{|doc| doc.name.downcase.include?(name)}

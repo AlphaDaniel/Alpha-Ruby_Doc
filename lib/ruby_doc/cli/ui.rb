@@ -36,7 +36,10 @@ class UI
     prompt
     input = my_gets
     
-    if input == "m" 
+    if input == "reset!"
+      Processor.reset_favs
+      RubyDoc::CLI.start
+    elsif input == "m" 
       RubyDoc::CLI.start
     elsif input == "exit!"
       exit!
@@ -191,8 +194,6 @@ class UI
       main_control
       
     else
-      # puts sepL
-      # puts favorites_message
       puts sepL
       
       # Iterated and display normalized favorites list
@@ -305,6 +306,7 @@ class UI
   
   def self.list_menu(matches) 
     puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
+    puts "Reset Favorites ".light_cyan + "(".cyan + "reset!".yellow + ")".cyan  if matches.first.is_a?(String)
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
@@ -445,6 +447,14 @@ class UI
     "=".black*56
   end
 #------------------messages-------------------- 
+  def self.reset_favs_message
+    puts sepB
+    puts "Favorites Deleted!".red
+    puts "Redirecting to main menu ..."
+    puts sepB
+    sleep(2.5)
+  end
+  
   def self.redH(str) 
     str.colorize(color: :white, background: :red)
   end #red highlight
