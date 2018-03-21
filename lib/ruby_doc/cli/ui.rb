@@ -3,7 +3,7 @@ class UI
   attr_reader :counter #For Loading Anim
 #===================Input====================== 
   def self.my_gets 
-    gets.strip.to_s.downcase
+    STDIN.gets.strip.to_s.downcase
   end
   
   def self.clear 

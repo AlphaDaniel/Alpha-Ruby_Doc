@@ -4,7 +4,8 @@
 ![fun](http://forthebadge.com/images/badges/powered-by-electricity.svg) 
 ![fun](http://forthebadge.com/images/badges/pretty-risque.svg)
 
-[![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)
+<!--[![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)-->
+
 [![Gem Version](https://img.shields.io/gem/v/ruby_doc.svg?&label=version&?&colorB=brightgreen)](https://rubygems.org/gems/ruby_doc)
 [![Release Date](https://img.shields.io/github/release-date/AlphaDaniel/ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/ruby_doc/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/AlphaDaniel/alpha-ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/alpha-ruby_doc/commits/master)
@@ -108,6 +109,10 @@ To Learn More (From Main Menu)
 To List Favorites (From Main Menu)
 
      $ *
+     
+To Reset Favorites (From Favorites Menu)
+
+     $ reset!
     
 ---
 ## Contributing

@@ -1,5 +1,4 @@
-# comment out before push
-# require_relative './patches'
+require_relative './patches'
 #====================Requires==============================
 require "bundler/setup"
 require 'fileutils'
