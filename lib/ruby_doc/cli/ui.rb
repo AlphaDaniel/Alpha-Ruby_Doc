@@ -370,7 +370,11 @@ class UI
   end
   
   def self.list_error(matches) 
-    print redH("\n Enter selection number, 'm' for main or 'exit!' to leave ")
+    if matches.first.is_a?(String)
+      print redH("\n Enter '#' to view, 'reset!', 'm' for main or 'exit!' to leave ")
+    else
+      print redH("\n Enter selection number, 'm' for main or 'exit!' to leave ")
+    end
   end
   
   def self.nil_error 

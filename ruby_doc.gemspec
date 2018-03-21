@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'nokogiri', '~> 1.8', '>= 1.8.1'
 #==============================================================   
   # comment out before push
-  spec.add_development_dependency "pry", "~>0.11.3"
+  # spec.add_development_dependency "pry", "~>0.11.3"
 #============================================================== 
 end
