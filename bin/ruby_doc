@@ -1,15 +1,7 @@
 #!/usr/bin/env ruby
-#======================================= 
+#============================================================= 
 require_relative '../config/environment'
-#=======================================
-# if dir does not exist
-if !File.exist?('usr')
-  # Creates usr dir
-  FileUtils::mkdir 'usr'
-  # Creates favorites.txt
-  FileUtils::touch 'usr/favorites.txt'
-end
-#=======================================
+#============================================================= 
+FileUtils::touch "#{gem_folder("ruby_doc", "2.1.1")}/favs.txt"
+#=============================================================
 RubyDoc::CLI.start_load
-
-
