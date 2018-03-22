@@ -18,9 +18,11 @@ require_relative '../lib/ruby_doc/data/data_processor'
 $DocDB = []
 #========================Favorites========================= 
 def fav_dir
-"#{Gem.path[0]}/gems/ruby_doc-#{RubyDoc::VERSION}/favs.txt"
+  File.expand_path("../favs.txt", __dir__)  
+  # "#{Gem.path[0]}/gems/ruby_doc-#{RubyDoc::VERSION}/favs.txt"
 end
 FileUtils::touch "#{fav_dir}"
 #=========================Testing========================== 
-# binding.pry
+
 #========================================================== 
+

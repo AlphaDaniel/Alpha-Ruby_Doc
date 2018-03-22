@@ -1,4 +1,9 @@
-v2.1.2 (2018-03-21) 
+v2.2.1 (2018-03-21) 
+------------------
+
+* Patch - Favorites file path fix
+
+v2.2.0 (2018-03-21) 
 ------------------
 
 * Patch - Favorites now persist to gem directory, access globally
