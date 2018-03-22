@@ -1,16 +1,19 @@
-class UI 
+require_relative './process_data'
+#============================================== 
+module Interact 
+  can_also ProcessData
 #=================Properties=================== 
   attr_reader :counter #For Loading Anim
 #===================Input====================== 
-  def self.my_gets 
+  def my_gets 
     STDIN.gets.strip.to_s.downcase
   end
   
-  def self.clear 
+  def clear 
     system "clear" or system "cls"
   end
 #==================Control===================== 
-  def self.main_control 
+  def main_control 
     prompt
     input = my_gets
     
@@ -25,19 +28,19 @@ class UI
     elsif input == "?" 
       learn_more
     else 
-      matches = Processor.search(input) 
+      matches = search(input) 
       
       search_error if matches.empty?
       search_list(matches) if matches
     end
   end
   
-  def self.favorites_list_control(list) 
+  def favorites_list_control(list) 
     prompt
     input = my_gets
     
     if input == "reset!"
-      Processor.reset_favs
+      reset_favs
       RubyDoc::CLI.start
     elsif input == "m" 
       RubyDoc::CLI.start
@@ -46,12 +49,12 @@ class UI
     elsif !input.to_i.between?(1,list.count) 
       list_error(list)
     else 
-      Processor.find_fav(list[input.to_i-1])
+      find_fav(list[input.to_i-1])
     end 
     favorites_list_control(list)
   end
   
-  def self.display_class_control(doc) 
+  def display_class_control(doc) 
     prompt
     input = my_gets
     
@@ -61,7 +64,7 @@ class UI
     when "1" 
       method_list(doc)
     when "s" 
-      Processor.save(doc)
+      save(doc)
     when "m" 
       RubyDoc::CLI.start
     when "exit!" 
@@ -71,13 +74,13 @@ class UI
     end 
   end
   
-  def self.display_method_control(doc) 
+  def display_method_control(doc) 
     prompt
     input = my_gets
     
     case input
     when "s" 
-      Processor.save(doc)
+      save(doc)
     when "m" 
       RubyDoc::CLI.start
     when "exit!"
@@ -87,7 +90,7 @@ class UI
     end 
   end
   
-  def self.list_control(matches) 
+  def list_control(matches) 
     prompt
     input = my_gets
     
@@ -98,12 +101,12 @@ class UI
     elsif !input.to_i.between?(1,matches.count) 
       list_error(matches)
     else 
-      Processor.load_doc(matches[input.to_i-1])
+      load_doc(matches[input.to_i-1])
     end 
     list_control(matches)
   end
   
-  def self.browse_control(identifier, page) 
+  def browse_control(identifier, page) 
     prompt
     input = my_gets
     
@@ -119,25 +122,25 @@ class UI
     if !input.to_i.between?(1,page.count) 
       browse_error(input, identifier, page) 
     else 
-      Processor.load_doc(page[input.to_i-1])
+      load_doc(page[input.to_i-1])
     end
   end
   
-  def self.paginate(identifier) 
+  def paginate(identifier) 
     case identifier
     when "start" 
-      Processor.page1
+      page1
     when "Page1" 
-      Processor.page2
+      page2
     when "Page2" 
-      Processor.page3
+      page3
     when "Page3" 
-      Processor.last
+      last
     end
   end
 #==================Display===================== 
 #-------------------docs----------------------- 
-  def self.display_class(doc, view="short") 
+  def display_class(doc, view="short") 
     puts sepL
     # header #
     puts "TITLE: ".cyan + doc.name.upcase 
@@ -163,7 +166,7 @@ class UI
     display_class_control(doc)
   end
   
-  def self.display_method(doc) 
+  def display_method(doc) 
     puts sepL
     puts "Title: ".cyan + doc.name.upcase 
     puts "Type: ".cyan + doc.type.upcase
@@ -181,7 +184,7 @@ class UI
     display_method_control(doc)
   end
 #-------------------lists---------------------- 
-  def self.favorites_list 
+  def favorites_list 
     # Normalize Favorites List
     list = []
     File.open("#{fav_dir}").each do |li| 
@@ -208,7 +211,7 @@ class UI
     end
   end
   
-  def self.search_list(matches) 
+  def search_list(matches) 
     puts sepL
     matches.each_with_index do |doc, index| 
       
@@ -228,7 +231,7 @@ class UI
     list_control(matches)
   end
   
-  def self.method_list(doc) 
+  def method_list(doc) 
     puts sepR
     doc.methods.each_with_index do |method, index| 
       
@@ -244,7 +247,7 @@ class UI
     list_control(doc.methods)
   end
   
-  def self.browse_list(page, identifier) 
+  def browse_list(page, identifier) 
     puts sepL
     page.each_with_index do |doc, index|  
       
@@ -269,7 +272,7 @@ class UI
     browse_control(identifier, page)
   end
 #-----------------learn more------------------- 
-  def self.learn_more 
+  def learn_more 
     puts sepB
     puts "FAVORITES".cyan
     puts sepB
@@ -294,7 +297,7 @@ class UI
     main_control
   end
 #===================Menus====================== 
-  def self.main_menu(from="default") 
+  def main_menu(from="default") 
     puts sepR
     puts "To search... enter a single (".cyan + "word".yellow + ") associated with Ruby. \nI will try to find a match in my database for you.".cyan
     puts sepB
@@ -304,7 +307,7 @@ class UI
     print cyanH("\n   Happy Hunting!   ")
   end
   
-  def self.list_menu(matches) 
+  def list_menu(matches) 
     puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
     puts "Reset Favorites ".light_cyan + "(".cyan + "reset!".yellow + ")".cyan  if matches.first.is_a?(String)
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
@@ -312,7 +315,7 @@ class UI
     print randQ
   end
   
-  def self.display_class_menu(doc) 
+  def display_class_menu(doc) 
     puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "View ".cyan + "Methods ".light_cyan + "For #{doc.name} (".cyan + "1".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
@@ -320,14 +323,14 @@ class UI
     print randQ
   end
   
-  def self.display_method_menu 
+  def display_method_menu 
     puts "Save To ".cyan + "Favorites ".light_cyan + "(".cyan + "s".yellow + ")".cyan
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
   
-  def self.browse_menu(page) 
+  def browse_menu(page) 
     puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
     puts "Next Page ".light_cyan + "(".cyan + "n".yellow + ")".cyan 
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
@@ -335,26 +338,26 @@ class UI
     print randQ
   end
   
-  def self.last_page_menu(page)
+  def last_page_menu(page)
     puts "View Doc ".light_cyan + "(".cyan + "#".yellow + ")".cyan 
     puts "Return To ".cyan + "Main Menu ".light_cyan + "(".cyan + "m".yellow + ")".cyan
     puts "Leave".light_cyan + " (".cyan + "exit!".yellow + ")".cyan
     print randQ
   end
 #===================Error====================== 
-  def self.main_error 
+  def main_error 
     sleep(0.1)
     print redH("\n Input Must Be 1 Word, 'b' to browse, or 'exit!' to leave ")
     main_control
   end
   
-  def self.favorites_error 
+  def favorites_error 
     sleep(0.1)
     print redH("\n You have no favorites saved ")
     main_control
   end
   
-  def self.search_error 
+  def search_error 
     puts sepB
     puts "NO CIGAR!".red
     puts "I couldn't find what you're looking for.".black 
@@ -369,7 +372,7 @@ class UI
     main_control
   end
   
-  def self.list_error(matches) 
+  def list_error(matches) 
     if matches.first.is_a?(String)
       print redH("\n Enter '#' to view, 'reset!', 'm' for main or 'exit!' to leave ")
     else
@@ -377,21 +380,21 @@ class UI
     end
   end
   
-  def self.nil_error 
+  def nil_error 
     print redH("\n Enter selection number, 'm' for main or 'exit!' to leave ")
   end
   
-  def self.display_class_error(doc) 
+  def display_class_error(doc) 
     print redH("\n Please enter '1' to view methods, 'm' for main, or 'exit!' to leave ")
     display_class_control(doc)
   end
   
-  def self.display_method_error 
+  def display_method_error 
     print redH("\n Please enter 'm' for main menu or 'exit!' to leave ")
     display_method_control
   end
   
-  def self.browse_error(input, identifier, page)  
+  def browse_error(input, identifier, page)  
     if identifier == "Last"
       list_error(page)
       browse_control(identifier, page)
@@ -401,13 +404,13 @@ class UI
     end
   end
   
-  def self.browse_list_error(page)
+  def browse_list_error(page)
     print redH("\n Enter # to view, 'n' for next page 'm' for main or 'exit!' to leave ")
   end
 #============================================== 
                                         #CANDY
 #================== Quotes===================== 
-  def self.randQ 
+  def randQ 
     puts sepB
     html = Nokogiri::HTML(open("https://fortrabbit.github.io/quotes/"))
     container = html.search(".row.gutter-l.wrap")
@@ -418,11 +421,11 @@ class UI
   end
 #=============Loading Animation================ 
   # Goes above iterator
-  def self.loading_message 
+  def loading_message 
     puts cyanH(" Loading Database ") + " ☠️"
   end
   # Goes inside iterator - last line
-  def self.loading_animation 
+  def loading_animation 
     loading = ""
     print loading << ". ".cyan if 
     @counter == 50 || @counter == 100 || @counter == 150 || @counter == 200 || 
@@ -435,23 +438,23 @@ class UI
   end
 #=============Colors/Candy Props=============== 
 #-------------------input---------------------- 
-  def self.prompt 
+  def prompt 
     print " >> ".cyan
   end
 #-----------------separators------------------- 
-  def self.sepL 
+  def sepL 
     "=".cyan*28 + "=".white*28
   end
     
-  def self.sepR 
+  def sepR 
     "=".white*28 + "=".cyan*28
   end
   
-  def self.sepB 
+  def sepB 
     "=".black*56
   end
 #------------------messages-------------------- 
-  def self.reset_favs_message
+  def reset_favs_message
     puts sepB
     puts "Favorites Deleted!".red
     puts "Redirecting to main menu ..."
@@ -459,26 +462,26 @@ class UI
     sleep(2.5)
   end
   
-  def self.redH(str) 
+  def redH(str) 
     str.colorize(color: :white, background: :red)
   end #red highlight
   
-  def self.cyanH(str) 
+  def cyanH(str) 
     str.colorize(color: :white, background: :cyan)
   end #cyan highlight
 #------------------strings--------------------- 
-  def self.rdo_prefix 
+  def rdo_prefix 
     "https://ruby-doc.org/core-2.4.3/"
   end
   
-  def self.view_full 
+  def view_full 
     puts sepB
     puts "To View Full Documentation Enter".cyan + " full".yellow
     puts sepB
   end 
     
   # currently not being used
-  def self.wrapped(s, width=60) 
+  def wrapped(s, width=60) 
 	  lines = []
 	  line = ""
 	 
@@ -496,7 +499,7 @@ class UI
 	  return lines.join "\n"
 	end #wrap string
 #=================Signature==================== 
-  def self.signature 
+  def signature 
     puts "\n"+"=".white*28 + "=".cyan*28 
 puts %q(               ALPHA™ 
                ╦═╗╦ ╦╔╗ ╦ ╦  ╔╦╗╔═╗╔═╗╔═╗

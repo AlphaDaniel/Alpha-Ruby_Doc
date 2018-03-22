@@ -7,7 +7,7 @@ require_relative './environment'
 #======================ruby patches======================== 
   # replaces include
   class Module 
-    def instances_can(*modules) 
+    def can_also(*modules) 
       modules.each(&method(:include))
     end
   end

@@ -1,4 +1,4 @@
-class Meth
+class Meth 
   can Track; can Find
 #=========================properties========================= 
   attr_accessor :type, :name, :url, :documentation 

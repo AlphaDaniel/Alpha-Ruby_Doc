@@ -1,5 +1,6 @@
-module RubyDoc::CLI 
-#======================================================
+class RubyDoc::CLI 
+  can Interact
+#====================================================== 
   def self.start_load 
     puts "\nThanks For Using ALPHA™ Ruby Docs!".cyan
     puts "One Moment Please As We Set Things Up\n".cyan
@@ -7,11 +8,11 @@ module RubyDoc::CLI
     # binding.pry
     self.start
   end
-#------------------------------------------------------  
+#------------------------------------------------------ 
   def self.start 
-    UI.signature
-    UI.main_menu
-    UI.main_control
+    signature
+    main_menu
+    main_control
   end
 #====================================================== 
 end 

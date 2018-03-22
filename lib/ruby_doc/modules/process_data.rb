@@ -1,67 +1,67 @@
-class Processor  
+module ProcessData 
 #=============================Browse Pages============================ 
-  def self.page1 
-    UI.browse_list($DocDB[0..499], "Page1")
+  def page1 
+    browse_list($DocDB[0..499], "Page1")
   end
   
-  def self.page2 
-    UI.browse_list($DocDB[500..999], "Page2")
+  def page2 
+    browse_list($DocDB[500..999], "Page2")
   end
   
-  def self.page3 
-    UI.browse_list($DocDB[1000..1499], "Page3")
+  def page3 
+    browse_list($DocDB[1000..1499], "Page3")
   end
   
-  def self.last 
-    UI.browse_list($DocDB[1500..$DocDB.count], "Last")
+  def last 
+    browse_list($DocDB[1500..$DocDB.count], "Last")
   end
 #===============================Load Doc============================== 
-  def self.load_doc(doc) 
+  def load_doc(doc) 
     if !doc.nil?
       Scraper.load_class_doc(doc) if doc.type == "Class" || doc.type == "Module"
       Scraper.load_method_doc(doc) if doc.type == "Method"
       
-      UI.display_class(doc) if doc.type == "Class" || doc.type == "Module"
-      UI.display_method(doc) if doc.type == "Method"
+      display_class(doc) if doc.type == "Class" || doc.type == "Module"
+      display_method(doc) if doc.type == "Method"
     else 
-      UI.nil_error
+      nil_error
     end
   end
 #===============================Save Doc============================== 
-  def self.save(doc) 
+  def save(doc) 
     # if entry does not exist write else inform entry exist
     if uniq(doc) 
       File.open("#{fav_dir}", "a"){|l| l.puts doc.name}
       puts "\r"
       print doc.name.cyan + " Saved!".light_cyan
       
-      UI.display_class_control(doc)
+      display_class_control(doc)
     else 
       puts "\r"
       print doc.name.cyan + " Already Saved!".light_red
       
-      UI.display_class_control(doc)
+      display_class_control(doc)
     end
   end
   
-  def self.uniq(doc) # save(doc) Helper Method 
+  def uniq(doc) # save(doc) Helper Method 
     # read => uniq boolean
     File.open("#{fav_dir}").none?{|l| l.chomp == doc.name}
   end
 #===============================Find Fav============================== 
-  def self.find_fav(name) 
+  def find_fav(name) 
     doc = $DocDB.find{|doc| doc.name == name}
     
     load_doc(doc) 
   end 
 #==============================Reset Favs============================= 
-  def self.reset_favs 
+  def reset_favs 
     open("#{fav_dir}", File::TRUNC) {}
     
-    UI.reset_favs_message
+    reset_favs_message
   end
 #================================SEARCH=============================== 
-  def self.search(name)
+  def search(name)
     $DocDB.find_all{|doc| doc.name.downcase.include?(name)}
   end
 #=====================================================================

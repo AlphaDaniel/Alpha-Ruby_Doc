@@ -1,4 +1,4 @@
-class Klass
+class Klass 
   can Track; can Find
 #=============================properties============================ 
   attr_accessor :type, :name, :url, :short, :documentation, :methods

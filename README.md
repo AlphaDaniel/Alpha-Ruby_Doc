@@ -52,15 +52,6 @@ Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in y
 
 
 ---
-
-[![contributions welcome](https://img.shields.io/badge/Contributions%20/%20Feedback%20/%20Requests-welcome-blue.svg?style=flat)](https://github.com/AlphaDaniel/ruby_doc/issues)
-
----
-### To do list:
-* Multiple Doc sources
-* Add Notes
-
----
 ## INSTALLATION
 
 <img src="https://i.imgur.com/AeHWQj8.gif" alt="image" width="790" height="170" align="middle">
@@ -112,19 +103,22 @@ To List Favorites (From Main Menu)
 To Reset Favorites (From Favorites Menu)
 
      $ reset!
+     
+---
+## To do list:
+* Multiple Doc sources
+* Add Notes
     
 ---
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/AlphaDaniel/alpha-ruby_doc. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome.  
+[![contributions welcome](https://img.shields.io/badge/Contributions%20/%20Feedback%20/%20Requests-welcome-blue.svg?style=flat)](https://github.com/AlphaDaniel/ruby_doc/issues)
+
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the AlphaRefRuby project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/ruby_doc/blob/master/CODE_OF_CONDUCT.md).
-
 
 
