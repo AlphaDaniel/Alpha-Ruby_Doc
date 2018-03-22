@@ -4,6 +4,7 @@ module RubyDoc::CLI
     puts "\nThanks For Using ALPHA™ Ruby Docs!".cyan
     puts "One Moment Please As We Set Things Up\n".cyan
     Scraper.load_classes and Scraper.load_methods
+    # binding.pry
     self.start
   end
 #------------------------------------------------------  

@@ -1,4 +1,5 @@
 class Meth
+  can KeepCount
 #=========================properties========================= 
   attr_accessor :type, :name, :url, :documentation
 #------------------------------------------------------------ 

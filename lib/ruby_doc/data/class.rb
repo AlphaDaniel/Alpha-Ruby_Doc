@@ -1,4 +1,5 @@
 class Klass
+  can KeepCount
 #=============================properties============================ 
   attr_accessor :type, :name, :url, :short, :documentation, :methods
 #------------------------------------------------------------------- 
