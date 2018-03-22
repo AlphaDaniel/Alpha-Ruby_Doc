@@ -4,8 +4,7 @@
 ![fun](http://forthebadge.com/images/badges/powered-by-electricity.svg) 
 ![fun](http://forthebadge.com/images/badges/pretty-risque.svg)
 
-<!--[![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)-->
-
+[![Build Status](https://img.shields.io/travis/AlphaDaniel/ruby_doc.svg)](https://travis-ci.org/AlphaDaniel/ruby_doc)
 [![Gem Version](https://img.shields.io/gem/v/ruby_doc.svg?&label=version&?&colorB=brightgreen)](https://rubygems.org/gems/ruby_doc)
 [![Release Date](https://img.shields.io/github/release-date/AlphaDaniel/ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/ruby_doc/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/AlphaDaniel/alpha-ruby_doc.svg?colorB=49C529)](https://github.com/AlphaDaniel/alpha-ruby_doc/commits/master)
@@ -21,9 +20,9 @@
 
 **THE ULTIMATE RUBY DEVELOPER REFERENCING TOOL!**
 
-**Alpha Ruby Doc** aims to make Ruby referencing quick and painless. This gem scrapes Ruby documentation and allows users to quickly reference Ruby classes, modules and methods all on your terminal in STYLE!
+**Alpha Ruby Doc** aims to make Ruby referencing quick and painless. This gem scrapes Ruby documentation and allows developers to quickly search or browse full documentation for classes, modules and/or methods. Including syntax examples, source Code, and even source links.
 
-Features include Search by Name, Paginated Browsing, Full documentation including Syntax and Source Code, Save to Favorites, Source Links, Seamless Navigation, and more.
+Features include Search by Name, Paginated Browsing, Full documentation including Syntax and Source Code, Save to Favorites (persists), Source Links, Seamless Navigation, and more.
 
 Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in your line of sight, and get right back to coding!
 
@@ -41,7 +40,7 @@ Have a query? **Run, Hunt, and Done**. Never lose momentum, keep all things in y
 
 ✓ Full documentation including description, syntax and source code!
 
-✓ Save Docs to Favorites! for quick referencing
+✓ Save Docs to Favorites! for quick referencing (Persists)
 
 ✓ Browse all Documentation (Paginated Output To Terminal)
 
