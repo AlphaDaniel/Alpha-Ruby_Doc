@@ -1,12 +1,8 @@
 class Klass
-  can KeepCount
+  can Track; can Find
 #=============================properties============================ 
   attr_accessor :type, :name, :url, :short, :documentation, :methods
-#------------------------------------------------------------------- 
-  @@all = []
-  def self.all; @@all; end 
 #=============================intialize============================= 
-  # count = 125
   def initialize(type, name, url) 
     self.type = type
     self.name = name
